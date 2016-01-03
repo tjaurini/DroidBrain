@@ -43,11 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="opencv_section.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="opencvlibs\opencv_world310.lib" />
+    <None Include="opencvlibs\opencv_world310d.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="opencvdlls\opencv_ffmpeg310_64.dll" />
+    <Content Include="opencvdlls\opencv_world310.dll" />
+    <Content Include="opencvdlls\opencv_world310d.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
