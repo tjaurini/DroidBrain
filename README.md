@@ -14,14 +14,14 @@ The structure is built under the following hypotheses/frameworks:
 - The probability of a neuron A's output being related to a neuron B's input should be determined by whether or not A has fired while the rest of B's inputs have also fired.
 
 --------------
-#Structure
+# Structure
 - the central network's inputs are from the microphone, visual, sensory inputs, and memory.
 - the central network's ouputs are to the speakers, robotic movements, and memory.
 
 Note: the use of a 'memory' may be difficult to implement or even distinguish from the weights the learning algorithm applies to them, unfortunately neural networks are purely reactive so the idea of a 'memory' as a reference point may in fact be desireable.
 
 ------------
-#Design Choices
+# Design Choices
 The possibilities for data structure are endless but in order to produce a speedy algorithm the following initial design choices can be made:
 - neural networks will be expressed as matrices of output data (each neuron presently contains an output)
 - a 2D array makes up a single layer
@@ -29,7 +29,7 @@ The possibilities for data structure are endless but in order to produce a speed
 - each neuron in the matrix recieves input from a maximum nighbourhood number 'P' of neurons
 - neuron's that are firing during a given neuron's scan are considered relavant while those that do not fire during the evaluation are not considered relavant
 
-TypeDefs:
+# TypeDefs:
 
   Brain => Section[]
 
@@ -41,7 +41,9 @@ TypeDefs:
 
   Triple => int[3];
   
-Evaluation Algorithm (iterative):
+# Evaluation Algorithms 
+  
+Iterative:
 ```
   for(Section s : inputs){
     for(Layer l : s){
@@ -68,7 +70,7 @@ Evaluation Algorithm (iterative):
 }
 ```
 
-Evaluation Algorithm (in Parallel):
+Parallel:
 ```
   private void main(){
     Thread ts = new Thread[];
@@ -94,6 +96,9 @@ Evaluation Algorithm (in Parallel):
       Thread.JoinAll(ts);
     }
   }
+  ```
+  Process and Update Routines:
+  ```
   public int process(Neuron[] inputs){
     float size = (float)(input.length);
     int total = 0;
