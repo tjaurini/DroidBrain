@@ -29,7 +29,7 @@ The possibilities for data structure are endless but in order to produce a speed
 - each neuron in the matrix recieves input from a maximum nighbourhood number 'P' of neurons
 - neuron's that are firing during a given neuron's scan are considered relavant while those that do not fire during the evaluation are not considered relavant
 
-# TypeDefs:
+TypeDefs:
 
   Brain => Section[]
 
@@ -41,9 +41,8 @@ The possibilities for data structure are endless but in order to produce a speed
 
   Triple => int[3];
   
-# Evaluation Algorithm (iterative):
-Code{
-
+Evaluation Algorithm (iterative):
+```
   for(Section s : inputs){
     for(Layer l : s){
       for(Neuron n : Layer){
@@ -66,9 +65,11 @@ Code{
       }
     }
   }
-  
 }
+```
+
 Evaluation Algorithm (in Parallel):
+```
   private void main(){
     Thread ts = new Thread[];
     for(Section s : inputs){
@@ -115,8 +116,9 @@ Evaluation Algorithm (in Parallel):
     
     \\
     \\
-    \\the remaining code here depends on whether or not we want neurons
-    \\of input sections to accept input from those in the output sections
   }
+  ```
+  
+  The remaining code for 'updateRelavants' depends on whether or not we want neurons of input sections to accept input from those in the output sections
   
   
