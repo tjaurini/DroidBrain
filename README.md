@@ -43,6 +43,7 @@ The possibilities for data structure are endless but in order to produce a speed
   
 # Evaluation Algorithm (iterative):
 Code{
+
   for(Section s : inputs){
     for(Layer l : s){
       for(Neuron n : Layer){
