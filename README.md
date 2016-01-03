@@ -42,22 +42,15 @@ The possibilities for data structure are endless but in order to produce a speed
   Triple => int[3];
   
 # Evaluation Algorithm (iterative):
+Code{
   for(Section s : inputs){
-  
     for(Layer l : s){
-    
       for(Neuron n : Layer){
-      
         int output = process(n.snd());
-        
         n.snd() = updateRelavants(n,l,s);
-        
       }
-      
     }
-    
   }
-  
   for(Layer l : central){
     for(Neuron n : Layer){
         int output = process(n.snd());
@@ -72,7 +65,8 @@ The possibilities for data structure are endless but in order to produce a speed
       }
     }
   }
-
+  
+}
 Evaluation Algorithm (in Parallel):
   private void main(){
     Thread ts = new Thread[];
