@@ -29,22 +29,35 @@ The possibilities for data structure are endless but in order to produce a speed
 - each neuron in the matrix recieves input from a maximum nighbourhood number 'P' of neurons
 - neuron's that are firing during a given neuron's scan are considered relavant while those that do not fire during the evaluation are not considered relavant
 
-TypeDefs:
+# TypeDefs:
+
   Brain => Section[]
+
   Section => Layer[]
+
   Layer => Neuron[]
+
   Neuron =>  [Object,Object] = (output,inputs) s.t. output = int & inputs = [[Section#,Layer#,Neuron#]] = Triple
+
   Triple => int[3];
   
-Evaluation Algorithm (iterative):
+# Evaluation Algorithm (iterative):
   for(Section s : inputs){
+  
     for(Layer l : s){
+    
       for(Neuron n : Layer){
+      
         int output = process(n.snd());
+        
         n.snd() = updateRelavants(n,l,s);
+        
       }
+      
     }
+    
   }
+  
   for(Layer l : central){
     for(Neuron n : Layer){
         int output = process(n.snd());
