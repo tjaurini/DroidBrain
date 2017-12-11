@@ -1,3 +1,5 @@
+NOTE: This is more of a thought experiment on simplified deep learning with nueral networks and shouldn't be taken too seriously but is welcome to be taken for the ideas herein.
+
 # DroidBrain
 a number N of neural networks interacting with a central neural network
 
